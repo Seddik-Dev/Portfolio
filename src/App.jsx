@@ -1,40 +1,63 @@
 import React from "react";
-import Header1 from "./components/mvpblocks/header-1";
-import Orb from "./components/Orb";
 import TextType from "./components/TextType";
 import AboutUs2 from "./components/mvpblocks/about-us-2";
 import ScrollVelocity from "./components/ScrollVelocity";
 import FooterAnimated from "./components/mvpblocks/footer-animated";
 import CardFlip from "./components/mvpblocks/card-flip";
+import LiquidEther from "./components/LiquidEther";
+import PillNav from "./components/PillNav";
+import CodeBlock from "./components/mvpblocks/code-block-1";
+import FloatingLines from "./components/FloatingLines";
 
 function App() {
   return (
     <>
       <div className=" w-full  overflow-x-hidden ">
-        <div className="bg-black h-[100vh] relative">
-          <Header1 />
-          <TextType
-            className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute text-white text-4xl md:text-6xl font-bold text-center"
-            text={[
-              "Hey there!",
-              "I'm Seddik Zaker.",
-              "Welcome to my portfolio.",
-            ]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="|"
-          />
-          <Orb
-            className="h-full absolute"
-            hoverIntensity={0.5}
-            rotateOnHover={true}
-            hue={0}
-            forceHoverState={false}
-          />
+        <div className="relative bg-black h-[100vh] overflow-hidden">
+          {/* ✅ Background layer — always at the bottom */}
+          {/* <FloatingLines
+            className="absolute inset-0 z-0"
+            enabledWaves={["top", "middle", "bottom"]}
+            lineCount={[10, 15, 20]}
+            lineDistance={[8, 6, 4]}
+            bendRadius={5.0}
+            bendStrength={-0.5}
+            interactive={true}
+            parallax={true}
+          /> */}
+
+
+          {/* ✅ Content layer — above background */}
+          <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 md:p-8 ">
+            {/* Navbar at top */}
+            <div className="w-full max-w-6xl mb-12">
+              <PillNav />
+            </div>
+
+            {/* Main content: text + code side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl items-center">
+              <div className="text-center md:text-left">
+                <TextType
+                  className="text-white text-2xl md:text-4xl lg:text-6xl font-bold"
+                  text={[
+                    "Hey there!",
+                    "I'm Seddik Zaker.",
+                    "Welcome to my portfolio.",
+                  ]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                />
+              </div>
+
+              <div>
+                <CodeBlock />
+              </div>
+            </div>
+          </div>
         </div>
         <AboutUs2></AboutUs2>
-
         <ScrollVelocity
           texts={["React Bits", "Scroll Down"]}
           velocity={80}
