@@ -1,40 +1,48 @@
 import React from "react";
 import TextType from "./components/TextType";
-import AboutUs2 from "./components/mvpblocks/about-us-2";
-import ScrollVelocity from "./components/ScrollVelocity";
 import FooterAnimated from "./components/mvpblocks/footer-animated";
 import CardFlip from "./components/mvpblocks/card-flip";
-import LiquidEther from "./components/LiquidEther";
-import PillNav from "./components/PillNav";
 import CodeBlock from "./components/mvpblocks/code-block-1";
-import FloatingLines from "./components/FloatingLines";
+import { SparklesCore } from "./components/ui/sparkles";
+import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
+import Dock from "./components/Dock";
+import DecryptedText from "./components/DecryptedText";
+import TrueFocus from "./components/TrueFocus";
 
 function App() {
+  const items = [
+    {
+      icon: <House size={18} />,
+      label: "Home",
+      onClick: () => alert("Home!"),
+    },
+    {
+      icon: <Info size={18} />,
+      label: "About",
+      onClick: () => alert("Archive!"),
+    },
+    {
+      icon: <BriefcaseBusiness size={18} />,
+      label: "Experience",
+      onClick: () => alert("Profile!"),
+    },
+    {
+      icon: <Contact size={18} />,
+      label: "Contact",
+      onClick: () => alert("Settings!"),
+    },
+  ];
   return (
-    <>
-      <div className=" w-full  overflow-x-hidden ">
+    <div className="relative">
+      <div className=" w-full overflow-x-hidden ">
         <div className="relative bg-black h-[100vh] overflow-hidden">
-          {/* ✅ Background layer — always at the bottom */}
-          {/* <FloatingLines
-            className="absolute inset-0 z-0"
-            enabledWaves={["top", "middle", "bottom"]}
-            lineCount={[10, 15, 20]}
-            lineDistance={[8, 6, 4]}
-            bendRadius={5.0}
-            bendStrength={-0.5}
-            interactive={true}
-            parallax={true}
-          /> */}
-
-
-          {/* ✅ Content layer — above background */}
           <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 md:p-8 ">
-            {/* Navbar at top */}
-            <div className="w-full max-w-6xl mb-12">
-              <PillNav />
-            </div>
-
-            {/* Main content: text + code side by side */}
+            <SparklesCore
+              id="tsparticles"
+              background="transparent"
+              particleDensity={300}
+              className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl items-center">
               <div className="text-center md:text-left">
                 <TextType
@@ -57,15 +65,9 @@ function App() {
             </div>
           </div>
         </div>
-        <AboutUs2></AboutUs2>
-        <ScrollVelocity
-          texts={["React Bits", "Scroll Down"]}
-          velocity={80}
-          className="custom-scroll-text"
-        />
         <div className="relative w-full h-screen text-white p-10">
-          {/* Background pattern */}
-          <div className="absolute inset-0 -z-10 opacity-20 dark:opacity-30 text-white/20">
+          {/* --- Background Pattern --- */}
+          <div className="absolute inset-0 -z-10 dark:opacity-30 bg-black text-gray-800">
             <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern
@@ -86,21 +88,41 @@ function App() {
             </svg>
           </div>
 
-          {/* Content */}
-          <div className="grid grid-cols-4 gap-4">
-            <CardFlip></CardFlip>
-            <CardFlip></CardFlip>
-            <CardFlip></CardFlip>
-            <CardFlip></CardFlip>
-            <CardFlip></CardFlip>
-            <CardFlip></CardFlip>
+          {/* --- Foreground Content (Centered Grid) --- */}
+          <div className="relative w-full flex items-center justify-center ">
+            <TrueFocus
+              sentence="About Me"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="green"
+              animationDuration={0.5}
+              pauseBetweenAnimations={1}
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-4 pt-10 z-20 relative">
+            <div className="flex items-center justify-center">
+              <CardFlip frontImage="/images/Seddik.jpg" />
+            </div>
+
+            <div className="p-10 rounded-xl"></div>
           </div>
         </div>
+
         <div>
           <FooterAnimated></FooterAnimated>
         </div>
       </div>
-    </>
+
+      <div>
+        <Dock
+          className="fixed bottom-0 z-50"
+          items={items}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
+      </div>
+    </div>
   );
 }
 
