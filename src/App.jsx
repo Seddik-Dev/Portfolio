@@ -6,8 +6,8 @@ import CodeBlock from "./components/mvpblocks/code-block-1";
 import { SparklesCore } from "./components/ui/sparkles";
 import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
 import Dock from "./components/Dock";
-import DecryptedText from "./components/DecryptedText";
 import TrueFocus from "./components/TrueFocus";
+import ScrollStack, { ScrollStackItem } from "./components/ScrollStack";
 
 function App() {
   const items = [
@@ -65,9 +65,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="relative w-full h-screen text-white p-10">
+        <div className="relative w-full min-h-screen text-white p-10">
           {/* --- Background Pattern --- */}
-          <div className="absolute inset-0 -z-10 dark:opacity-30 bg-black text-gray-800">
+          <div className="absolute inset-0 -z-10 dark:opacity-30 bg-black text-gray-800 pointer-events-none">
             <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern
@@ -104,7 +104,49 @@ function App() {
               <CardFlip frontImage="/images/Seddik.jpg" />
             </div>
 
-            <div className="p-10 rounded-xl"></div>
+            <div className="rounded-xl h-full flex flex-col">
+              <div className="text-2xl font-semibold text-justify">
+                Passionate Full Stack Web Developer, with solid experience in design and development
+                of dynamic and efficient web applications.
+                I create complete solutions combining code quality, user experience fluidity and technical efficiency.
+                Rigorous, curious and results-oriented, I thrive in collaborative environments where innovation and
+                performance are at the heart of projects.
+              </div>
+
+              <div className="mt-12">
+                <blockquote className="mt-6 border-l-2 pl-6 italic">
+                  Building things that make life easier, one commit at a time.
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="relative w-full flex items-center justify-center mt-20">
+            <TrueFocus
+              sentence="My Education"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="green"
+              animationDuration={0.5}
+              pauseBetweenAnimations={1}
+            />
+          </div>
+          <div>
+            <ScrollStack>
+              <ScrollStackItem>
+                <h2>Card 1</h2>
+                <p>This is the first card in the stack</p>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <h2>Card 2</h2>
+                <p>This is the second card in the stack</p>
+              </ScrollStackItem>
+              <ScrollStackItem>
+                <h2>Card 3</h2>
+                <p>This is the third card in the stack</p>
+              </ScrollStackItem>
+            </ScrollStack>
           </div>
         </div>
 
