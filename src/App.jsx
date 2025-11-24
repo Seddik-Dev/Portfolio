@@ -7,7 +7,7 @@ import { SparklesCore } from "./components/ui/sparkles";
 import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
 import Dock from "./components/Dock";
 import TrueFocus from "./components/TrueFocus";
-import ScrollStack, { ScrollStackItem } from "./components/ScrollStack";
+import { ScrollTimeline } from "./components/ScrollTimeLine";
 
 function App() {
   const items = [
@@ -30,6 +30,20 @@ function App() {
       icon: <Contact size={18} />,
       label: "Contact",
       onClick: () => alert("Settings!"),
+    },
+  ];
+  const events = [
+    {
+      year: "2023",
+      title: "Major Achievement",
+      subtitle: "Organization Name",
+      description: "Description of the achievement.",
+    },
+    {
+      year: "2022",
+      title: "Important Milestone",
+      subtitle: "Organization Name",
+      description: "Details about the milestone.",
     },
   ];
   return (
@@ -106,11 +120,13 @@ function App() {
 
             <div className="rounded-xl h-full flex flex-col">
               <div className="text-2xl font-semibold text-justify">
-                Passionate Full Stack Web Developer, with solid experience in design and development
-                of dynamic and efficient web applications.
-                I create complete solutions combining code quality, user experience fluidity and technical efficiency.
-                Rigorous, curious and results-oriented, I thrive in collaborative environments where innovation and
-                performance are at the heart of projects.
+                Passionate Full Stack Web Developer, with solid experience in
+                design and development of dynamic and efficient web
+                applications. I create complete solutions combining code
+                quality, user experience fluidity and technical efficiency.
+                Rigorous, curious and results-oriented, I thrive in
+                collaborative environments where innovation and performance are
+                at the heart of projects.
               </div>
 
               <div className="mt-12">
@@ -119,7 +135,6 @@ function App() {
                 </blockquote>
               </div>
             </div>
-
           </div>
 
           <div className="relative w-full flex items-center justify-center mt-20">
@@ -132,22 +147,15 @@ function App() {
               pauseBetweenAnimations={1}
             />
           </div>
-          <div>
-            <ScrollStack>
-              <ScrollStackItem>
-                <h2>Card 1</h2>
-                <p>This is the first card in the stack</p>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <h2>Card 2</h2>
-                <p>This is the second card in the stack</p>
-              </ScrollStackItem>
-              <ScrollStackItem>
-                <h2>Card 3</h2>
-                <p>This is the third card in the stack</p>
-              </ScrollStackItem>
-            </ScrollStack>
-          </div>
+        <div>
+          <ScrollTimeline
+            events={events}
+            subtitle="Scroll to explore the timeline"
+            progressIndicator={true}
+            cardAlignment="alternating"
+            revealAnimation="fade"
+          />
+        </div>
         </div>
 
         <div>
