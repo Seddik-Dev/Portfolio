@@ -34,16 +34,21 @@ function App() {
   ];
   const events = [
     {
-      year: "2023",
-      title: "Major Achievement",
-      subtitle: "Organization Name",
-      description: "Description of the achievement.",
+      year: " 2024 - 2025",
+      title: "Bachelor's Degree in WEB DEVELOPMENT FULL STACK AND DEVOPS",
+      subtitle: "FSAC",
+      description: "Training focused on the creation of modern web applications, the use of frameworks like Angular and Java JEE, and mastery of DevOps tools and the Linux environment.",
     },
     {
-      year: "2022",
-      title: "Important Milestone",
-      subtitle: "Organization Name",
-      description: "Details about the milestone.",
+      year: " 2021 - 2023",
+      title: "TECHNICIAN SPECIALIZED IN DIGITAL DEVELOPMENT",
+      subtitle: "ISGI",
+      description: " Training focused on the development of web applications with Python, JavaScript and PHP, as well as their frameworks React and Laravel. Introduction to project management and the use of its main collaborative tools",
+    },
+    {
+      year: " 2021",
+      title: "BACCALAUREATE IN PHYSICAL SCIENCES",
+      subtitle: "G.S.MISBAH",
     },
   ];
   return (
@@ -136,21 +141,11 @@ function App() {
               </div>
             </div>
           </div>
-
-          <div className="relative w-full flex items-center justify-center mt-20">
-            <TrueFocus
-              sentence="My Education"
-              manualMode={false}
-              blurAmount={5}
-              borderColor="green"
-              animationDuration={0.5}
-              pauseBetweenAnimations={1}
-            />
-          </div>
         <div>
           <ScrollTimeline
+            title="My Education"
             events={events}
-            subtitle="Scroll to explore the timeline"
+            subtitle="Scroll to explore My Education"
             progressIndicator={true}
             cardAlignment="alternating"
             revealAnimation="fade"
