@@ -8,8 +8,8 @@ import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
 import Dock from "./components/Dock";
 import TrueFocus from "./components/TrueFocus";
 import { ScrollTimeline } from "./components/ScrollTimeLine";
-import ScrollStack, { ScrollStackItem } from "./components/ScrollStack";
-import ExpandableCards from "./components/smoothui/expandable-cards";
+import Globe from "./components/ui/globe";
+import { CardsStackContainer } from "./components/systaliko-ui/cards/cards-stack";
 
 function App() {
   const items = [
@@ -165,8 +165,25 @@ function App() {
               pauseBetweenAnimations={1}
             />
           </div>
-          <div className="relative w-full flex items-center justify-center ">
-            <ExpandableCards className="overflow-hidden"></ExpandableCards>
+          <div className="grid grid-cols-2 grid-rows-1 gap-4 mt-10">
+            <div>
+
+            </div>
+            <div>
+              <Globe
+                rotateCities={["Casablanca", "london", "tokyo", "dubai"]}
+                rotationSpeed={3000}
+                markers={[
+                  { location: [33.605381, -7.631949], size: 0.1 },
+                  { location: [51.5074, -0.1278], size: 0.1 },
+                  { location: [35.6762, 139.6503], size: 0.1 },
+                  { location: [25.2048, 55.2708], size: 0.1 },
+                ]}
+                glowColor={[0.1, 0.8, 1]}
+                markerColor={[0.1, 0.8, 1]}
+                className="w-full h-[100vh]"
+              />
+            </div>
           </div>
 
           <div></div>
