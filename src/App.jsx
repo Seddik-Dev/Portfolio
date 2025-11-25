@@ -8,6 +8,8 @@ import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
 import Dock from "./components/Dock";
 import TrueFocus from "./components/TrueFocus";
 import { ScrollTimeline } from "./components/ScrollTimeLine";
+import ScrollStack, { ScrollStackItem } from "./components/ScrollStack";
+import ExpandableCards from "./components/smoothui/expandable-cards";
 
 function App() {
   const items = [
@@ -37,13 +39,15 @@ function App() {
       year: " 2024 - 2025",
       title: "Bachelor's Degree in WEB DEVELOPMENT FULL STACK AND DEVOPS",
       subtitle: "FSAC",
-      description: "Training focused on the creation of modern web applications, the use of frameworks like Angular and Java JEE, and mastery of DevOps tools and the Linux environment.",
+      description:
+        "Training focused on the creation of modern web applications, the use of frameworks like Angular and Java JEE, and mastery of DevOps tools and the Linux environment.",
     },
     {
       year: " 2021 - 2023",
       title: "TECHNICIAN SPECIALIZED IN DIGITAL DEVELOPMENT",
       subtitle: "ISGI",
-      description: " Training focused on the development of web applications with Python, JavaScript and PHP, as well as their frameworks React and Laravel. Introduction to project management and the use of its main collaborative tools",
+      description:
+        " Training focused on the development of web applications with Python, JavaScript and PHP, as well as their frameworks React and Laravel. Introduction to project management and the use of its main collaborative tools",
     },
     {
       year: " 2021",
@@ -141,16 +145,31 @@ function App() {
               </div>
             </div>
           </div>
-        <div>
-          <ScrollTimeline
-            title="My Education"
-            events={events}
-            subtitle="Scroll to explore My Education"
-            progressIndicator={true}
-            cardAlignment="alternating"
-            revealAnimation="fade"
-          />
-        </div>
+          <div>
+            <ScrollTimeline
+              title="My Education"
+              events={events}
+              subtitle="Scroll to explore My Education"
+              progressIndicator={true}
+              cardAlignment="alternating"
+              revealAnimation="fade"
+            />
+          </div>
+          <div className="relative w-full flex items-center justify-center ">
+            <TrueFocus
+              sentence="My Experiences"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="green"
+              animationDuration={0.5}
+              pauseBetweenAnimations={1}
+            />
+          </div>
+          <div className="relative w-full flex items-center justify-center ">
+            <ExpandableCards className="overflow-hidden"></ExpandableCards>
+          </div>
+
+          <div></div>
         </div>
 
         <div>

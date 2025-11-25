@@ -1,6 +1,6 @@
 const DotRow = ({ accentColor }) => {
   return (
-    <section className="absolute z-0 grid h-full w-full grid-cols-2 place-content-between">
+          <section className="absolute z-0 grid h-full w-full grid-cols-2 place-content-between">
       {Array.from({ length: 4 }).map((_, idx) => (
         <div
           key={idx}
@@ -10,7 +10,7 @@ const DotRow = ({ accentColor }) => {
           style={{ backgroundColor: accentColor }}
         />
       ))}
-    </section>
+          </section>
   );
 };
 
@@ -27,7 +27,7 @@ export default function DotCard({
 }) {
   return (
     <div
-      className={`relative mx-auto w-full rounded-lg border border-dashed border-zinc-300 px-4 sm:px-6 md:px-8 dark:border-zinc-800 ${className}`}
+      className= {`relative mx-auto  w-full rounded-lg border border-dashed border-zinc-300 px-4 sm:px-6 md:px-8 dark:border-zinc-800 ${className}`}
     >
       <div className="absolute top-4 left-0 -z-0 h-px w-full bg-zinc-300 sm:top-6 md:top-8 dark:bg-zinc-700" />
       <div className="absolute bottom-4 left-0 z-0 h-px w-full bg-zinc-300 sm:bottom-6 md:bottom-8 dark:bg-zinc-700" />
@@ -58,7 +58,7 @@ export default function DotCard({
             {title && (
               <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
                 {title}
-              </h3>
+            </h3>
             )}
             {subtitle && (
               <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
