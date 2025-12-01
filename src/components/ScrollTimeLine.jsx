@@ -37,7 +37,7 @@ export const ScrollTimeline = ({
   subtitle = "Scroll to explore the journey",
   animationOrder = "sequential",
   cardAlignment = "alternating",
-  lineColor = "bg-primary/30",
+  lineColor = "#3DFFFF",
   activeColor = "bg-primary",
   progressIndicator = true,
   cardVariant = "default",
@@ -218,10 +218,10 @@ export const ScrollTimeline = ({
                   transform: "translateX(-50%)",
                   borderRadius:
                     progressLineCap === "round" ? "9999px" : "0px",
-                  background: `linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7)`,
+                  background: `linear-gradient(to bottom, #3DFFFF, #3DFFFF, #3DFFFF)`,
                   boxShadow: `
-                    0 0 15px rgba(99,102,241,0.5),
-                    0 0 25px rgba(168,85,247,0.3)
+                    0 0 15px rgba(61,255,255,0.5),
+                    0 0 25px rgba(61,255,255,0.3)
                   `,
                 }}
               />
@@ -237,11 +237,11 @@ export const ScrollTimeline = ({
                   className="w-5 h-5 rounded-full"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(168,85,247,0.8) 0%, rgba(99,102,241,0.5) 40%, rgba(34,211,238,0) 70%)",
+                      "radial-gradient(circle, rgba(61,255,255,0.8) 0%, rgba(61,255,255,0.5) 40%, rgba(61,255,255,0) 70%)",
                     boxShadow: `
-                      0 0 15px 4px rgba(168, 85, 247, 0.6),
-                      0 0 25px 8px rgba(99, 102, 241, 0.4),
-                      0 0 40px 15px rgba(34, 211, 238, 0.2)
+                      0 0 15px 4px rgba(61, 255, 255, 0.6),
+                      0 0 25px 8px rgba(61, 255, 255, 0.4),
+                      0 0 40px 15px rgba(61, 255, 255, 0.2)
                     `,
                   }}
                   animate={{
@@ -300,9 +300,9 @@ export const ScrollTimeline = ({
                           ? {
                               scale: [1, 1.3, 1],
                               boxShadow: [
-                                "0 0 0px rgba(99,102,241,0)",
-                                "0 0 12px rgba(99,102,241,0.6)",
-                                "0 0 0px rgba(99,102,241,0)",
+                                "0 0 0px rgba(61, 255, 255, 0)",
+                                "0 0 12px rgba(61, 255, 255, 0.6)",
+                                "0 0 0px rgba(61, 255, 255, 0)",
                               ],
                             }
                           : {}
@@ -334,7 +334,7 @@ export const ScrollTimeline = ({
                           <Calendar className="h-4 w-4 mr-2" />
                         ) : null)
                       }
-                      accentColor={event.accentColor || event.color || "#6366f1"}
+                      accentColor={event.accentColor || event.color || "#000"}
                       dateFormat={dateFormat}
                       className="bg-background border border-dashed border-primary/20"
                     >

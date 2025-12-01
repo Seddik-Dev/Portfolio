@@ -132,7 +132,7 @@ function App() {
               sentence="About Me"
               manualMode={false}
               blurAmount={5}
-              borderColor="green"
+              borderColor="#3DFFFF"
               animationDuration={0.5}
               pauseBetweenAnimations={1}
             />
@@ -175,7 +175,7 @@ function App() {
               sentence="My Experiences"
               manualMode={false}
               blurAmount={5}
-              borderColor="green"
+              borderColor="#3DFFFF"
               animationDuration={0.5}
               pauseBetweenAnimations={1}
             />
@@ -213,7 +213,7 @@ function App() {
                           <h3 className="mb-2 font-medium text-white dark:text-zinc-100">
                             {item.subtitle}
                           </h3>
-                          <p className="text-white dark:text-zinc-400">
+                          <p className="text-white dark:text-zinc-400 text-justify">
                             {item.content}
                           </p>
                         </div>
