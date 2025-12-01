@@ -9,9 +9,11 @@ import Dock from "./components/Dock";
 import TrueFocus from "./components/TrueFocus";
 import { ScrollTimeline } from "./components/ScrollTimeLine";
 import Globe from "./components/ui/globe";
-import { CardsStackContainer } from "./components/systaliko-ui/cards/cards-stack";
+import { TransitionPanel } from "./components/ui/transition-panel";
+import { useState } from "react";
 
 function App() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const items = [
     {
       icon: <House size={18} />,
@@ -53,6 +55,19 @@ function App() {
       year: " 2021",
       title: "BACCALAUREATE IN PHYSICAL SCIENCES",
       subtitle: "G.S.MISBAH",
+    },
+  ];
+  const elements = [
+    {
+      title: "DÉVELOPPEUR WEB FULL STACK",
+      subtitle: "MABORNE – FABRICANT DE BORNES TACTILES ET DE SOLUTIONS PHYGITALES  | 2023 - Present",
+      content: `Développement de solutions web avancées pour bornes interactives, incluant la conception d’interfaces intuitives, l’intégration de fonctionnalités multimédias et l’optimisation poussée des performances. Participation active à la mise en place d’architectures robustes, à la résolution de problématiques techniques complexes et à la collaboration quotidienne au sein d’équipes agiles pour assurer la qualité, la fluidité et l’évolution continue des projets.`,
+
+    },
+    {
+      title: "DÉVELOPPEUR WEB FULL STACK",
+      subtitle: "STAGE A LA DIRECTION RÉGIONALE DE L’OFPPT, CASABLANCA |  02/2023 - 03/2023",
+      content: `Delve into how motion can be used as an artistic tool to tell stories and evoke emotions, making digital interactions feel more human and expressive.`,
     },
   ];
   return (
@@ -165,9 +180,48 @@ function App() {
               pauseBetweenAnimations={1}
             />
           </div>
-          <div className="grid grid-cols-2 grid-rows-1 gap-4 mt-10">
-            <div>
-
+          <div className="grid grid-cols-1 grid-rows-1 gap-4 mt-10 md:grid-cols-2 sm:grid-cols-2 ">
+            <div className="mt-15 lg:mt-48 md:mt-48">
+              <div>
+                <div>
+                  <div className="mb-4 flex space-x-2">
+                    {elements.map((item, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveIndex(index)}
+                        className={`rounded-md px-3 py-1 text-sm font-medium ${activeIndex === index
+                          ? "bg-blue-500 text-white dark:bg-zinc-800 dark:text-zinc-100"
+                          : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
+                          }`}
+                      >
+                        {item.title}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="overflow-hidden border-t border-zinc-200 dark:border-zinc-700">
+                    <TransitionPanel
+                      activeIndex={activeIndex}
+                      transition={{ duration: 0.2, ease: "easeInOut" }}
+                      variants={{
+                        enter: { opacity: 0, y: -50, filter: "blur(4px)" },
+                        center: { opacity: 1, y: 0, filter: "blur(0px)" },
+                        exit: { opacity: 0, y: 50, filter: "blur(4px)" },
+                      }}
+                    >
+                      {elements.map((item, index) => (
+                        <div key={index} className="py-2">
+                          <h3 className="mb-2 font-medium text-white dark:text-zinc-100">
+                            {item.subtitle}
+                          </h3>
+                          <p className="text-white dark:text-zinc-400">
+                            {item.content}
+                          </p>
+                        </div>
+                      ))}
+                    </TransitionPanel>
+                  </div>
+                </div>
+              </div>
             </div>
             <div>
               <Globe
@@ -185,8 +239,6 @@ function App() {
               />
             </div>
           </div>
-
-          <div></div>
         </div>
 
         <div>
