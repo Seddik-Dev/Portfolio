@@ -11,6 +11,8 @@ import { ScrollTimeline } from "./components/ScrollTimeLine";
 import Globe from "./components/ui/globe";
 import { TransitionPanel } from "./components/ui/transition-panel";
 import { useState } from "react";
+import ThreeDCardDemo from "./components/3dCard";
+import { StickyScrollRevealDemo } from "./components/StickyScrollReveal";
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -59,15 +61,16 @@ function App() {
   ];
   const elements = [
     {
-      title: "DÉVELOPPEUR WEB FULL STACK",
-      subtitle: "MABORNE – FABRICANT DE BORNES TACTILES ET DE SOLUTIONS PHYGITALES  | 2023 - Present",
-      content: `Développement de solutions web avancées pour bornes interactives, incluant la conception d’interfaces intuitives, l’intégration de fonctionnalités multimédias et l’optimisation poussée des performances. Participation active à la mise en place d’architectures robustes, à la résolution de problématiques techniques complexes et à la collaboration quotidienne au sein d’équipes agiles pour assurer la qualité, la fluidité et l’évolution continue des projets.`,
-
+      title: "Full Stack Web Developer",
+      subtitle:
+        "MABORNE – Fabricant de bornes tactiles et de solutions phygitales  | 2023 - Present",
+      content: `Development of advanced web solutions for interactive kiosks, including intuitive interface design, multimedia feature integration, and rigorous performance optimization. Active participation in the establishment of robust architectures, the resolution of complex technical problems, and daily collaboration within agile teams to ensure quality, fluidity, and continuous project evolution.`,
     },
     {
-      title: "DÉVELOPPEUR WEB FULL STACK",
-      subtitle: "STAGE A LA DIRECTION RÉGIONALE DE L’OFPPT, CASABLANCA |  02/2023 - 03/2023",
-      content: `Delve into how motion can be used as an artistic tool to tell stories and evoke emotions, making digital interactions feel more human and expressive.`,
+      title: "Full Stack Web Developer",
+      subtitle:
+        "Stage at the Regional Direction of OFPPT, Casablanca |  02/2023 - 03/2023",
+      content: `Training focused on the development of web applications using Python, JavaScript and PHP, with a thorough practice of their main modern frameworks such as React and Laravel. The program also includes structured training in project management, covering methodologies, team organization, and the use of essential collaborative tools to ensure effective tracking, fluid communication, and optimal coordination within a digital project.`,
     },
   ];
   return (
@@ -105,7 +108,7 @@ function App() {
         </div>
         <div className="relative w-full min-h-screen text-white p-10">
           {/* --- Background Pattern --- */}
-          <div className="absolute inset-0 -z-10 dark:opacity-30 bg-black text-gray-800 pointer-events-none">
+          <div className="absolute inset-0 -z-10 dark:opacity-30 bg-black text-gray-800 pointer-events-none ">
             <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern
@@ -125,74 +128,74 @@ function App() {
               <rect width="100%" height="100%" fill="url(#grid)" />
             </svg>
           </div>
-
-          {/* --- Foreground Content (Centered Grid) --- */}
-          <div className="relative w-full flex items-center justify-center ">
-            <TrueFocus
-              sentence="About Me"
-              manualMode={false}
-              blurAmount={5}
-              borderColor="#3DFFFF"
-              animationDuration={0.5}
-              pauseBetweenAnimations={1}
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4 pt-10 z-20 relative">
-            <div className="flex items-center justify-center">
-              <CardFlip frontImage="/images/Seddik.jpg" />
+          <div className="max-w-7xl mx-auto w-full">
+            {/* --- Foreground Content (Centered Grid) --- */}
+            <div className="relative w-full flex items-center justify-center ">
+              <TrueFocus
+                sentence="About Me"
+                manualMode={false}
+                blurAmount={5}
+                borderColor="#3DFFFF"
+                animationDuration={0.5}
+                pauseBetweenAnimations={1}
+              />
             </div>
-
-            <div className="rounded-xl h-full flex flex-col">
-              <div className="text-2xl font-semibold text-justify">
-                Passionate Full Stack Web Developer, with solid experience in
-                design and development of dynamic and efficient web
-                applications. I create complete solutions combining code
-                quality, user experience fluidity and technical efficiency.
-                Rigorous, curious and results-oriented, I thrive in
-                collaborative environments where innovation and performance are
-                at the heart of projects.
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-10 z-20 relative">
+              <div className="flex items-center justify-center">
+                <CardFlip frontImage="/images/Seddik.jpg" />
               </div>
 
-              <div className="mt-12">
-                <blockquote className="mt-6 border-l-2 pl-6 italic">
-                  Building things that make life easier, one commit at a time.
-                </blockquote>
+              <div className="rounded-xl h-full flex flex-col">
+                <div className="text-2xl font-semibold text-justify">
+                  Passionate Full Stack Web Developer, with solid experience in
+                  design and development of dynamic and efficient web
+                  applications. I create complete solutions combining code
+                  quality, user experience fluidity and technical efficiency.
+                  Rigorous, curious and results-oriented, I thrive in
+                  collaborative environments where innovation and performance
+                  are at the heart of projects.
+                </div>
+
+                <div className="mt-12">
+                  <blockquote className="mt-6 border-l-2 pl-6 italic">
+                    Building things that make life easier, one commit at a time.
+                  </blockquote>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <ScrollTimeline
-              title="My Education"
-              events={events}
-              subtitle="Scroll to explore My Education"
-              progressIndicator={true}
-              cardAlignment="alternating"
-              revealAnimation="fade"
-            />
-          </div>
-          <div className="relative w-full flex items-center justify-center ">
-            <TrueFocus
-              sentence="My Experiences"
-              manualMode={false}
-              blurAmount={5}
-              borderColor="#3DFFFF"
-              animationDuration={0.5}
-              pauseBetweenAnimations={1}
-            />
-          </div>
-          <div className="grid grid-cols-1 grid-rows-1 gap-4 mt-10 md:grid-cols-2 sm:grid-cols-2 ">
-            <div className="mt-15 lg:mt-48 md:mt-48">
+            <div>
+              <ScrollTimeline
+                title="My Education"
+                events={events}
+                subtitle="Scroll to explore My Education"
+                progressIndicator={true}
+                cardAlignment="alternating"
+                revealAnimation="fade"
+              />
+            </div>
+            <div className="grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 sm:grid-cols-2 ">
               <div>
-                <div>
+                <div className="relative w-full flex items-center justify-center ">
+                  <TrueFocus
+                    sentence="My Experiences"
+                    manualMode={false}
+                    blurAmount={5}
+                    borderColor="#3DFFFF"
+                    animationDuration={0.5}
+                    pauseBetweenAnimations={1}
+                  />
+                </div>
+                <div className="mt-15">
                   <div className="mb-4 flex space-x-2">
                     {elements.map((item, index) => (
                       <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
-                        className={`rounded-md px-3 py-1 text-sm font-medium ${activeIndex === index
-                          ? "bg-blue-500 text-white dark:bg-zinc-800 dark:text-zinc-100"
-                          : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
-                          }`}
+                        className={`rounded-md px-3 py-1 text-sm font-medium ${
+                          activeIndex === index
+                            ? "bg-blue-500 text-white dark:bg-zinc-800 dark:text-zinc-100"
+                            : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
+                        }`}
                       >
                         {item.title}
                       </button>
@@ -222,21 +225,24 @@ function App() {
                   </div>
                 </div>
               </div>
+              <div>
+                <div className="relative w-full flex items-center justify-center ">
+                  <TrueFocus
+                    sentence="My Certifications"
+                    manualMode={false}
+                    blurAmount={5}
+                    borderColor="#3DFFFF"
+                    animationDuration={0.5}
+                    pauseBetweenAnimations={1}
+                  />
+                </div>
+                <div>
+                  <ThreeDCardDemo />
+                </div>
+              </div>
             </div>
             <div>
-              <Globe
-                rotateCities={["Casablanca", "london", "tokyo", "dubai"]}
-                rotationSpeed={3000}
-                markers={[
-                  { location: [33.605381, -7.631949], size: 0.1 },
-                  { location: [51.5074, -0.1278], size: 0.1 },
-                  { location: [35.6762, 139.6503], size: 0.1 },
-                  { location: [25.2048, 55.2708], size: 0.1 },
-                ]}
-                glowColor={[0.1, 0.8, 1]}
-                markerColor={[0.1, 0.8, 1]}
-                className="w-full h-[100vh]"
-              />
+              <StickyScrollRevealDemo />
             </div>
           </div>
         </div>
