@@ -11,7 +11,7 @@ import { ScrollTimeline } from "./components/ScrollTimeLine";
 import { TransitionPanel } from "./components/ui/transition-panel";
 import { useState } from "react";
 import ThreeDCardDemo from "./components/3dCard";
-import { StickyScrollRevealDemo } from "./components/StickyScrollReveal";
+import { LayoutGridDemo } from "./components/LayoutGridIndex";
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -190,11 +190,10 @@ function App() {
                       <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
-                        className={`rounded-md px-3 py-1 text-sm font-medium ${
-                          activeIndex === index
-                            ? "bg-blue-500 text-white dark:bg-zinc-800 dark:text-zinc-100"
-                            : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
-                        }`}
+                        className={`rounded-md px-3 py-1 text-sm font-medium ${activeIndex === index
+                          ? "bg-blue-500 text-white dark:bg-zinc-800 dark:text-zinc-100"
+                          : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
+                          }`}
                       >
                         {item.title}
                       </button>
@@ -241,7 +240,17 @@ function App() {
               </div>
             </div>
             <div>
-              <StickyScrollRevealDemo />
+              <div className="relative w-full flex items-center justify-center ">
+                <TrueFocus
+                  sentence="Some Projects"
+                  manualMode={false}
+                  blurAmount={5}
+                  borderColor="#3DFFFF"
+                  animationDuration={0.5}
+                  pauseBetweenAnimations={1}
+                />
+              </div>
+              <LayoutGridDemo></LayoutGridDemo>
             </div>
           </div>
         </div>
