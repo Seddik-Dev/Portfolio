@@ -8,7 +8,6 @@ import { House, Info, BriefcaseBusiness, Contact } from "lucide-react";
 import Dock from "./components/Dock";
 import TrueFocus from "./components/TrueFocus";
 import { ScrollTimeline } from "./components/ScrollTimeLine";
-import Globe from "./components/ui/globe";
 import { TransitionPanel } from "./components/ui/transition-panel";
 import { useState } from "react";
 import ThreeDCardDemo from "./components/3dCard";
