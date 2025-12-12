@@ -358,7 +358,7 @@ function App() {
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-stretch mt-20 ">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center   h-full">
                 <RadialOrbitalTimeline />
               </div>
               <div className="w-full">
