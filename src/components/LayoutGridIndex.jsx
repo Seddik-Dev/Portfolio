@@ -1,11 +1,11 @@
 import React from "react";
 import { LayoutGrid } from "./ui/layout-grid";
-import img1 from "../../public/images/cars.png";
-import img2 from "../../public/images/hotel.png";
-import img3 from "../../public/images/pfe.png";
-import img4 from "../../public/images/stage.png";
-import img5 from "../../public/images/recipedia.png";
-import img6 from "../../public/images/watches.png";
+import img1 from "@/assets/images/cars.png";
+import img2 from "@/assets/images/hotel.png";
+import img3 from "@/assets/images/pfe.png";
+import img4 from "@/assets/images/stage.png";
+import img5 from "@/assets/images/recipedia.png";
+import img6 from "@/assets/images/watches.png";
 
 export function LayoutGridDemo() {
     return (

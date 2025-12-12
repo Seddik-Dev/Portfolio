@@ -1,6 +1,6 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import cisco from "../../public/logos/cisco.png";
+import cisco from "@/assets/logos/cisco.png";
 
 export default function ThreeDCardDemo() {
   return (
