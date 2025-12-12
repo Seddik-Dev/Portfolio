@@ -164,7 +164,7 @@ function App() {
                     fill="none"
                     stroke="#3DFFFF"
                     strokeWidth="1"
-                    opacity="0.1"
+                    opacity="0.2"
                   />
                 </pattern>
               </defs>
