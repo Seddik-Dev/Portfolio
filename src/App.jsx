@@ -362,7 +362,7 @@ function App() {
                 <RadialOrbitalTimeline />
               </div>
               <div className="w-full">
-                <div className="relative w-full h-[300px] sm:h-[360px] md:h-[520px] lg:h-[640px]">
+                <div className="relative w-full h-[450px] sm:h-[360px] md:h-[520px] lg:h-[640px]">
                   <SplineScene
                     scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                     className="absolute inset-0 w-full h-full"
